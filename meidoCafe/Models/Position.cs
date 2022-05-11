@@ -12,5 +12,6 @@ namespace meidoCafe.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Pay { get; set; }
+        public virtual int EmployeeId { get; set; }
     }
 }

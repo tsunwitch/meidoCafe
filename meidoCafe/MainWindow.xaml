@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:meidoCafe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Image Height="200" Source = "/Images/meidoCafe.png"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"/>
+            <ColumnDefinition Width="0.75*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" LastChildFill="True">
+            <Image Height="80" Source = "/Images/meidoCafe.png" DockPanel.Dock="Top" Margin="0 10 0 10"/>
+            <Button Height="60" DockPanel.Dock="Bottom">Checkout</Button>
+            
+            <Grid>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Name="categorySelection">
+                    <Button>Food</Button>
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+        
     </Grid>
 </Window>

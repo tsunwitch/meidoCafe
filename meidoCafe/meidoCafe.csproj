@@ -30,4 +30,8 @@
     <Resource Include="Images\meidoCafe.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserControls\" />
+  </ItemGroup>
+
 </Project>

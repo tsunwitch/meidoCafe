@@ -17,7 +17,11 @@
             <DataTemplate DataType="{x:Type viewModel:FoodViewModel}">
                 <view:FoodView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewModel:DrinkViewModel}">
+                <view:DrinkView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

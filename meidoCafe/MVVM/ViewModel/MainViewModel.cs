@@ -9,7 +9,13 @@ namespace meidoCafe.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
+        public RelayCommand FoodViewCommand { get; set; }
+
+        public RelayCommand DrinkViewCommand { get; set; }
+
         public FoodViewModel FoodVM { get; set; }
+
+        public DrinkViewModel DrinkVM { get; set; }
 
         private object _currentView;
 
@@ -26,7 +32,13 @@ namespace meidoCafe.MVVM.ViewModel
         public MainViewModel()
         {
             FoodVM = new FoodViewModel();
+            DrinkVM = new DrinkViewModel();
+
             CurrentView = FoodVM;
+
+            FoodViewCommand = new RelayCommand(o => { CurrentView = FoodVM; });
+
+            DrinkViewCommand = new RelayCommand(o => { CurrentView = DrinkVM; });
         }
 
     }

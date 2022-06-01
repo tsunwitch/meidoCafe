@@ -13,27 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace meidoCafe
+namespace meidoCafe.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FoodView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FoodView : UserControl
     {
-        public MainWindow()
+        public FoodView()
         {
             InitializeComponent();
-        }
-
-        private void closeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void dragBorder_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-                this.DragMove();
         }
     }
 }

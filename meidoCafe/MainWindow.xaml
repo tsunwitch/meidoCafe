@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:meidoCafe"
+        xmlns:viewModel ="clr-namespace:meidoCafe.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -16,6 +17,11 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
     <Border Background="#ffffff" CornerRadius="8">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -34,17 +40,17 @@
                    Height="70"/>
 
             <StackPanel Grid.Row="1">
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonRight}"
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0 20 0 0"
                              IsChecked="True"
                              Content="Food" />
                 
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonRight}"
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
                              Content="Drinks" />
 
-                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonRight}"
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
                              Content="Products" />
@@ -59,7 +65,8 @@
                      Grid.Column="1"/>
 
             <ContentControl Grid.Row="1"
-                            Grid.Column="1"/>
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>

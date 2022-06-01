@@ -12,7 +12,10 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}">
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.25*"/>

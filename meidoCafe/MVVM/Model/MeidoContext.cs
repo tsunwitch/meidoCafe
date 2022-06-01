@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace meidoCafe.Models
 {
-    internal class meidoContext : DbContext
+    internal class MeidoContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

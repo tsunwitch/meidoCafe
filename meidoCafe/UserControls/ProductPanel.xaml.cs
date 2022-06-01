@@ -1,7 +1,5 @@
-﻿using meidoCafe.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace meidoCafe.MVVM.View
+namespace meidoCafe.UserControls
 {
     /// <summary>
-    /// Interaction logic for FoodView.xaml
+    /// Interaction logic for ProductPanel.xaml
     /// </summary>
-    public partial class FoodView : UserControl
+    public partial class ProductPanel : UserControl
     {
-        public FoodView()
+        public ProductPanel()
         {
             InitializeComponent();
-
-            using(var ctx = new MeidoContext())
-            {
-                var foodList = new ObservableCollection<Product>(ctx.Products.Where(p => p.ProductTypeId.Equals(1)));
-            }
         }
     }
 }

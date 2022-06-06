@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using meidoCafe.Models;
 
@@ -10,9 +11,10 @@ using meidoCafe.Models;
 namespace meidoCafe.Migrations
 {
     [DbContext(typeof(MeidoContext))]
-    partial class meidoContextModelSnapshot : ModelSnapshot
+    [Migration("20220606101234_PriceAdd")]
+    partial class PriceAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,6 +36,7 @@ namespace meidoCafe.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -184,35 +187,48 @@ namespace meidoCafe.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
                     b.Property<float>("Price")
                         .HasColumnType("real");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
 
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductTypeId");
+
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("OrderProduct", b =>
+            modelBuilder.Entity("meidoCafe.Models.ProductType", b =>
                 {
-                    b.Property<int>("OrdersOrderID")
+                    b.Property<int>("ProductTypeId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductsProductId")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductTypeId"), 1L, 1);
 
-                    b.HasKey("OrdersOrderID", "ProductsProductId");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ProductsProductId");
+                    b.HasKey("ProductTypeId");
 
-                    b.ToTable("OrderProduct");
+                    b.ToTable("ProductTypes");
                 });
 
             modelBuilder.Entity("meidoCafe.Models.Order", b =>
@@ -246,19 +262,16 @@ namespace meidoCafe.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("OrderProduct", b =>
-                {
                     b.HasOne("meidoCafe.Models.Order", null)
-                        .WithMany()
-                        .HasForeignKey("OrdersOrderID")
+                        .WithMany("Products")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("meidoCafe.Models.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsProductId")
+                    b.HasOne("meidoCafe.Models.ProductType", null)
+                        .WithMany("Products")
+                        .HasForeignKey("ProductTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -278,6 +291,16 @@ namespace meidoCafe.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Positions");
+                });
+
+            modelBuilder.Entity("meidoCafe.Models.Order", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("meidoCafe.Models.ProductType", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }

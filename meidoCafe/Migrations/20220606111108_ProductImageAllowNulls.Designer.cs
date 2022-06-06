@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using meidoCafe.Models;
 
@@ -10,9 +11,10 @@ using meidoCafe.Models;
 namespace meidoCafe.Migrations
 {
     [DbContext(typeof(MeidoContext))]
-    partial class meidoContextModelSnapshot : ModelSnapshot
+    [Migration("20220606111108_ProductImageAllowNulls")]
+    partial class ProductImageAllowNulls
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

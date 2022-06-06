@@ -10,7 +10,7 @@ using meidoCafe.Models;
 
 namespace meidoCafe.Migrations
 {
-    [DbContext(typeof(meidoContext))]
+    [DbContext(typeof(MeidoContext))]
     [Migration("20220511092804_Initial")]
     partial class Initial
     {

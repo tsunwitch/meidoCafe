@@ -41,5 +41,7 @@ namespace meidoCafe.MVVM.ViewModel
             DrinkViewCommand = new RelayCommand(o => { CurrentView = DrinkVM; });
         }
 
+
+
     }
 }

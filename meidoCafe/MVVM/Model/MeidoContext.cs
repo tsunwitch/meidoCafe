@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace meidoCafe.Models
 {
-    internal class meidoContext : DbContext
+    internal class MeidoContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,6 +19,5 @@ namespace meidoCafe.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
     }
 }

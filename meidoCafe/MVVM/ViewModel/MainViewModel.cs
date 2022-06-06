@@ -54,8 +54,5 @@ namespace meidoCafe.MVVM.ViewModel
 
             ProductViewCommand = new RelayCommand(o => { CurrentView = ProductVM; });
         }
-
-
-
     }
 }

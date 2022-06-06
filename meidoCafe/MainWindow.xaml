@@ -55,18 +55,20 @@
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
-                             Content="Desserts" />
+                             Content="Desserts" 
+                             Command="{Binding DessertViewCommand}"/>
 
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
-                             Content="Products" />
+                             Content="Products"
+                             Command="{Binding ProductViewCommand}"/>
 
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
                              IsEnabled="False"
-                             Content="Configuration" />
+                             Content="Configuration"/>
 
             </StackPanel>
 

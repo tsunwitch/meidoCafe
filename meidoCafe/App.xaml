@@ -22,6 +22,14 @@
                 <view:DrinkView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:DessertViewModel}">
+                <view:DessertView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProductViewModel}">
+                <view:ProductView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

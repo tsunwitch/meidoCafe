@@ -55,8 +55,19 @@
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
+                             Content="Desserts" />
+
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
+                             Margin="0"
+                             IsChecked="False"
                              Content="Products" />
-                
+
+                <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
+                             Margin="0"
+                             IsChecked="False"
+                             IsEnabled="False"
+                             Content="Configuration" />
+
             </StackPanel>
 
             <TextBox Width="200"

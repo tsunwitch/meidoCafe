@@ -28,7 +28,19 @@ namespace meidoCafe.MVVM.View
 
             using(var ctx = new MeidoContext())
             {
+                int featured1 = 2;
+                int featured2 = 4;
+
                 var foodList = new ObservableCollection<Product>(ctx.Products.Where(p => p.CategoryId.Equals(1)));
+
+                Featured1Text.Text = foodList[featured1].Name;
+                Featured1Price.Text = $"${foodList[featured1].Price}";
+
+                Featured2Text.Text = foodList[featured2].Name;
+                Featured2Price.Text = $"${foodList[featured2].Price}";
+
+                foodList.Remove(foodList[featured1]);
+                foodList.Remove(foodList[featured2 - 1]);
 
                 icFoodItemsControl.ItemsSource = foodList;
             }

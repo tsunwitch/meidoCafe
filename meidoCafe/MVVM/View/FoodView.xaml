@@ -32,12 +32,12 @@
                 </Border.Clip>
 
                     <StackPanel>
-                        <TextBlock Text="Cloud Tiramisu"
+                        <TextBlock Name="Featured1Text"
                                 Foreground="#ffffff"
                                 FontSize="28"
                                 Margin="20 10 10 0"/>
 
-                        <TextBlock Text="12.99$"
+                        <TextBlock Name="Featured1Price"
                                 Foreground="#ffffff"
                                 FontSize="18"
                                 Opacity="0.7"
@@ -56,7 +56,27 @@
                         <GradientStop Color="{StaticResource Primary500}" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-            </Border>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                    RadiusY="10"
+                                    Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                    <StackPanel>
+                        <TextBlock Name="Featured2Text"
+                                Foreground="#ffffff"
+                                FontSize="28"
+                                Margin="20 10 10 0"/>
+
+                        <TextBlock Name="Featured2Price"
+                                Foreground="#ffffff"
+                                FontSize="18"
+                                Opacity="0.7"
+                                Margin="20 10 10 0"/>
+                    </StackPanel>
+
+                </Border>
         </StackPanel>
 
             <StackPanel>
@@ -64,28 +84,7 @@
                    Style="{StaticResource MaterialDesignHeadline3TextBlock}"
                    Margin="5"
                    Foreground="{StaticResource PrimaryHueMidBrush}"/>
-
-
-                <!--<Border Width="150"
-                        Height="150"
-                        Background="{StaticResource PrimaryHueLightBrush}"
-                        CornerRadius="10"
-                        Margin="0"/>
-
-                <Border Width="150"
-                        Height="150"
-                        Background="{StaticResource PrimaryHueLightBrush}"
-                        CornerRadius="10"/>
-
-                <Border Width="150"
-                        Height="150"
-                        Background="{StaticResource PrimaryHueLightBrush}"
-                        CornerRadius="10"/>
-
-                <Border Width="150"
-                        Height="150"
-                        Background="{StaticResource PrimaryHueLightBrush}"
-                        CornerRadius="10"/>-->
+                
                 <ItemsControl Name="icFoodItemsControl">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>

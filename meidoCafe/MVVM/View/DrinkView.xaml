@@ -5,9 +5,143 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:meidoCafe.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="{StaticResource PrimaryHueDarkBrush}">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+        <StackPanel>
+            <TextBlock Text="Seasonal Goods"
+                   Style="{StaticResource MaterialDesignHeadline2TextBlock}"
+                   Margin="5"
+                   Foreground="{StaticResource SecondaryHueMidBrush}"/>
+
+            <StackPanel Orientation="Horizontal"
+                    Margin="0 0 0 10">
+                <Border Width="400"
+                    Height="200">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="{StaticResource Primary500}" Offset="0.0"/>
+                            <GradientStop Color="{StaticResource Accent200}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                    </Border.Clip>
+
+                    <StackPanel>
+                        <TextBlock Name="Featured1Text"
+                                Foreground="#ffffff"
+                                FontSize="28"
+                                Margin="20 10 10 0"/>
+
+                        <TextBlock Name="Featured1Price"
+                                Foreground="#ffffff"
+                                FontSize="18"
+                                Opacity="0.7"
+                                Margin="20 10 10 0"/>
+
+                        <Button HorizontalAlignment="Right"
+                                DockPanel.Dock="Bottom"
+                                Content="+"
+                                Background="#ffffff"
+                                BorderThickness="0"
+                                Name="featured1Button"/>
+                    </StackPanel>
+
+
+                </Border>
+
+                <Border Width="200"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="45 0 0 0">
+
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="{StaticResource Accent200}" Offset="0.0"/>
+                            <GradientStop Color="{StaticResource Primary500}" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                    RadiusY="10"
+                                    Rect="0,0,400,200"/>
+                    </Border.Clip>
+
+                    <StackPanel>
+                        <TextBlock Name="Featured2Text"
+                                Foreground="#ffffff"
+                                FontSize="28"
+                                Margin="20 10 10 0"/>
+
+                        <TextBlock Name="Featured2Price"
+                                Foreground="#ffffff"
+                                FontSize="18"
+                                Opacity="0.7"
+                                Margin="20 10 10 0"/>
+
+                        <Button HorizontalAlignment="Right"
+                                DockPanel.Dock="Bottom"
+                                Content="+"
+                                Background="#ffffff"
+                                BorderThickness="0"
+                                Name="featured2Button"/>
+                    </StackPanel>
+
+                </Border>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Text="Regular"
+                   Style="{StaticResource MaterialDesignHeadline3TextBlock}"
+                   Margin="5"
+                   Foreground="{StaticResource PrimaryHueMidBrush}"/>
+
+                <ItemsControl Name="icFoodItemsControl">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="150"
+                                    Height="150"
+                                    Background="{StaticResource PrimaryHueLightBrush}"
+                                    CornerRadius="10"
+                                    Margin="15 0 0 15">
+                                <DockPanel>
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <TextBlock Text="{Binding Name}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="24"
+                                                    Margin="20 10 10 0"
+                                                    TextWrapping="Wrap"/>
+
+                                        <TextBlock Text="{Binding Price, StringFormat='${0}'}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="16"
+                                                    Opacity="0.7"
+                                                    Margin="20 10 10 0"/>
+                                    </StackPanel>
+
+                                    <Button HorizontalAlignment="Right"
+                                            DockPanel.Dock="Bottom"
+                                            Content="+"
+                                            Background="#ffffff"
+                                            BorderThickness="0"
+                                            Name="panelButton"/>
+                                </DockPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>

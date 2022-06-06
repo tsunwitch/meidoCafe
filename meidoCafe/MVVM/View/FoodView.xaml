@@ -92,10 +92,10 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Border Width="150"
-                                        Height="150"
-                                        Background="{StaticResource PrimaryHueLightBrush}"
-                                        CornerRadius="10"
-                                        Margin="15 0 0 15">
+                                    Height="150"
+                                    Background="{StaticResource PrimaryHueLightBrush}"
+                                    CornerRadius="10"
+                                    Margin="15 0 0 15">
                                 <DockPanel>
                                     <StackPanel DockPanel.Dock="Top">
                                         <TextBlock Text="{Binding Name}"

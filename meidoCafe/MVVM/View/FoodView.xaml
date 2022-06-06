@@ -17,7 +17,8 @@
         <StackPanel Orientation="Horizontal"
                     Margin="0 0 0 10">
             <Border Width="400"
-                    Height="200">
+                    Height="200"
+                    Margin="15 0 0 0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="{StaticResource Primary500}" Offset="0.0"/>
@@ -42,7 +43,16 @@
                                 FontSize="18"
                                 Opacity="0.7"
                                 Margin="20 10 10 0"/>
+                        
+                        <Button HorizontalAlignment="Right"
+                                DockPanel.Dock="Bottom"
+                                Content="+"
+                                Background="#ffffff"
+                                BorderThickness="0"
+                                Name="featured1Button"/>
                     </StackPanel>
+
+                    
                 </Border>
 
             <Border Width="200"
@@ -67,13 +77,21 @@
                         <TextBlock Name="Featured2Text"
                                 Foreground="#ffffff"
                                 FontSize="28"
-                                Margin="20 10 10 0"/>
+                                Margin="20 10 10 0"
+                                TextWrapping="Wrap"/>
 
                         <TextBlock Name="Featured2Price"
                                 Foreground="#ffffff"
                                 FontSize="18"
                                 Opacity="0.7"
                                 Margin="20 10 10 0"/>
+
+                        <Button HorizontalAlignment="Right"
+                                DockPanel.Dock="Bottom"
+                                Content="+"
+                                Background="#ffffff"
+                                BorderThickness="0"
+                                Name="featured2Button"/>
                     </StackPanel>
 
                 </Border>

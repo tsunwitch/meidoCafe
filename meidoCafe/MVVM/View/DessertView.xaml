@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="meidoCafe.MVVM.View.DrinkView"
+﻿<UserControl x:Class="meidoCafe.MVVM.View.DessertView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -21,7 +21,7 @@
                         Margin="15 0 0 0">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                            <GradientStop Color="#cc90e8" Offset="0.0"/>
+                            <GradientStop Color="{StaticResource Primary500}" Offset="0.0"/>
                             <GradientStop Color="{StaticResource Accent200}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
@@ -63,7 +63,7 @@
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                             <GradientStop Color="{StaticResource Accent200}" Offset="0.0"/>
-                            <GradientStop Color="#cc90e8" Offset="1"/>
+                            <GradientStop Color="{StaticResource Primary500}" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
 
@@ -108,7 +108,7 @@
                         <DataTemplate>
                             <Border Width="150"
                                     Height="150"
-                                    Background="#cc90e8"
+                                    Background="{StaticResource PrimaryHueLightBrush}"
                                     CornerRadius="10"
                                     Margin="15 0 0 15">
                                 <DockPanel>

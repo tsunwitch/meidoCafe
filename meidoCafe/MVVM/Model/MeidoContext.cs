@@ -19,6 +19,5 @@ namespace meidoCafe.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
     }
 }

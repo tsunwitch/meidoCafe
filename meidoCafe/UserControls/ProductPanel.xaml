@@ -13,7 +13,7 @@
                 CornerRadius="10"
                 Margin="0">
             <StackPanel>
-                <TextBlock Text="{Binding Name}"
+                <TextBlock Text="Cloud tiramisu"
                                    Foreground="#ffffff"
                                    FontSize="28"
                                    Margin="20 10 10 0"

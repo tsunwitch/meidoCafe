@@ -28,10 +28,13 @@ namespace meidoCafe.MVVM.View
 
             using(var ctx = new MeidoContext())
             {
-                var foodList = new ObservableCollection<Product>(ctx.Products.Where(p => p.ProductTypeId.Equals(1)));
+                var foodList = new ObservableCollection<Product>(ctx.Products.Where(p => p.CategoryId.Equals(1)));
+
+                icFoodItemsControl.ItemsSource = foodList;
             }
 
             //TODO: Add item loading from list
+            
         }
     }
 }

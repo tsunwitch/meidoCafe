@@ -9,7 +9,7 @@ using meidoCafe.Models;
 
 namespace meidoCafe.Migrations
 {
-    [DbContext(typeof(meidoContext))]
+    [DbContext(typeof(MeidoContext))]
     partial class meidoContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -194,6 +194,9 @@ namespace meidoCafe.Migrations
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("int");

@@ -30,6 +30,8 @@ namespace meidoCafe.MVVM.View
             {
                 var foodList = new ObservableCollection<Product>(ctx.Products.Where(p => p.ProductTypeId.Equals(1)));
             }
+
+            //TODO: Add item loading from list
         }
     }
 }

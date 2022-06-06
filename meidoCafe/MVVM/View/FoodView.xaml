@@ -67,7 +67,8 @@
                    Margin="5"
                    Foreground="{StaticResource PrimaryHueMidBrush}"/>
 
-            <WrapPanel Orientation="Horizontal">
+            <WrapPanel Orientation="Horizontal"
+                       Name="RegularWrapPanel">
 
                 <WrapPanel.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -75,7 +76,7 @@
                     </Style>
                 </WrapPanel.Resources>
                 
-                <Border Width="150"
+                <!--<Border Width="150"
                         Height="150"
                         Background="{StaticResource PrimaryHueLightBrush}"
                         CornerRadius="10"
@@ -94,7 +95,33 @@
                 <Border Width="150"
                         Height="150"
                         Background="{StaticResource PrimaryHueLightBrush}"
-                        CornerRadius="10"/>
+                        CornerRadius="10"/>-->
+                    <ItemsControl Name="icFoodItemsControl">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="Cloud Tiramisu"
+                                   Foreground="#ffffff"
+                                   FontSize="28"
+                                   Margin="20 10 10 0"
+                                   TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="12.99$"
+                                   Foreground="#ffffff"
+                                   FontSize="18"
+                                   Opacity="0.7"
+                                   Margin="20 10 10 0"/>
+                                    <Button HorizontalAlignment="Right"
+                                            Content="+"
+                                            Background="#ffffff"
+                                            BorderThickness="0"
+                                            Name="panelButton"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        
+                    </ItemsControl>
+                
             </WrapPanel>
             
         </StackPanel>

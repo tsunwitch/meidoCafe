@@ -11,8 +11,8 @@ using meidoCafe.Models;
 namespace meidoCafe.Migrations
 {
     [DbContext(typeof(MeidoContext))]
-    [Migration("20220511092804_Initial")]
-    partial class Initial
+    [Migration("20220606101234_PriceAdd")]
+    partial class PriceAdd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -196,6 +196,9 @@ namespace meidoCafe.Migrations
 
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
+
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("int");

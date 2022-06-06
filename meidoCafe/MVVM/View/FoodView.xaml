@@ -95,27 +95,29 @@
                                         Height="150"
                                         Background="{StaticResource PrimaryHueLightBrush}"
                                         CornerRadius="10"
-                                        Margin="15 15 0 0">
-                                <StackPanel>
-                                    <TextBlock Text="dupadupa"
-                                                   Foreground="#ffffff"
-                                                   FontSize="28"
-                                                   Margin="20 10 10 0"
-                                                   TextWrapping="Wrap"/>
+                                        Margin="15 0 0 15">
+                                <DockPanel>
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <TextBlock Text="{Binding Name}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="24"
+                                                    Margin="20 10 10 0"
+                                                    TextWrapping="Wrap"/>
 
-                                    <TextBlock Text="dupa"
-                                                   Foreground="#ffffff"
-                                                   FontSize="18"
-                                                   Opacity="0.7"
-                                                   Margin="20 10 10 0"/>
+                                        <TextBlock Text="{Binding Price}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="16"
+                                                    Opacity="0.7"
+                                                    Margin="20 10 10 0"/>
+                                    </StackPanel>
 
                                     <Button HorizontalAlignment="Right"
-                                                VerticalAlignment="Bottom"
-                                                Content="+"
-                                                Background="#ffffff"
-                                                BorderThickness="0"
-                                                Name="panelButton"/>
-                                </StackPanel>
+                                            DockPanel.Dock="Bottom"
+                                            Content="+"
+                                            Background="#ffffff"
+                                            BorderThickness="0"
+                                            Name="panelButton"/>
+                                </DockPanel>
                             </Border>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

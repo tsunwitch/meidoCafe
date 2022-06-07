@@ -67,8 +67,8 @@
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
                              Margin="0"
                              IsChecked="False"
-                             IsEnabled="False"
-                             Content="Configuration"/>
+                             Content="Configuration"
+                             Command="{Binding ConfigurationViewCommand}"/>
 
             </StackPanel>
 

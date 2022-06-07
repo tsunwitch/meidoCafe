@@ -17,6 +17,8 @@ namespace meidoCafe.MVVM.ViewModel
 
         public RelayCommand ProductViewCommand { get; set; }
 
+        public RelayCommand ConfigurationViewCommand { get; set;}
+
         public FoodViewModel FoodVM { get; set; }
 
         public DrinkViewModel DrinkVM { get; set; }
@@ -24,6 +26,7 @@ namespace meidoCafe.MVVM.ViewModel
         public DessertViewModel DessertVM { get; set; }
 
         public ProductViewModel ProductVM { get; set; }
+        public ConfigurationViewModel ConfigurationVM { get; set; }
 
         private object _currentView;
 
@@ -43,6 +46,7 @@ namespace meidoCafe.MVVM.ViewModel
             DrinkVM = new DrinkViewModel();
             DessertVM = new DessertViewModel();
             ProductVM = new ProductViewModel();
+            ConfigurationVM = new ConfigurationViewModel();
 
             CurrentView = FoodVM;
 
@@ -53,6 +57,8 @@ namespace meidoCafe.MVVM.ViewModel
             DessertViewCommand = new RelayCommand(o => { CurrentView = DessertVM; });
 
             ProductViewCommand = new RelayCommand(o => { CurrentView = ProductVM; });
+
+            ConfigurationViewCommand = new RelayCommand(o => { CurrentView = ConfigurationVM; });
         }
     }
 }

@@ -35,12 +35,15 @@
                 <ComboBox materialDesign:HintAssist.Hint="Category"
                           Name="PCategoryComboBox"
                           Width="150"
-                          Margin="8">
-                    <ComboBox.ItemTemplate>
+                          Margin="8"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="CategoryId"
+                          >
+                    <!--<ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                    </ComboBox.ItemTemplate>-->
                 </ComboBox>
 
                 <TextBox x:Name="PNameTextBox"
@@ -102,12 +105,14 @@
                 <ComboBox materialDesign:HintAssist.Hint="Choose a product"
                           Name="PRemoveComboBox"
                           Width="150"
-                          Margin="8">
-                    <ComboBox.ItemTemplate>
+                          Margin="8"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="ProductId">
+                    <!--<ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
                         </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                    </ComboBox.ItemTemplate>-->
                 </ComboBox>
 
                 <Button Content="Remove"

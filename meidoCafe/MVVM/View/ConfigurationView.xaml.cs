@@ -38,6 +38,7 @@ namespace meidoCafe.MVVM.View
                 CategoryList = new ObservableCollection<Category>(ctx.Categories);
 
                 PRemoveComboBox.ItemsSource = ProdList;
+
                 PCategoryComboBox.ItemsSource = CategoryList;
             }
         }
@@ -45,7 +46,7 @@ namespace meidoCafe.MVVM.View
         private void ProductInsert_Click(object sender, RoutedEventArgs e)
         {
             //Inserting a product
-            int categoryID = PCategoryComboBox.SelectedIndex + 1;
+            var categoryID = Convert.ToInt32(PCategoryComboBox.SelectedValue);
             string name = PNameTextBox.Text;
             string description = PDescriptionTextBox.Text;
             float price = float.Parse(PPriceTextBox.Text, CultureInfo.InvariantCulture);
@@ -74,9 +75,11 @@ namespace meidoCafe.MVVM.View
 
         private void ProductDelete_Click(object sender, RoutedEventArgs e)
         {
+            int productID = Convert.ToInt32(PRemoveComboBox.SelectedValue);
+
             var productToDelete = new Product()
             {
-                ProductId = PRemoveComboBox.SelectedIndex + 1
+                ProductId = productID
             };
 
             using (var ctx = new MeidoContext())

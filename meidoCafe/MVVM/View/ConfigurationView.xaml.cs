@@ -30,6 +30,8 @@ namespace meidoCafe.MVVM.View
             using (var ctx = new MeidoContext())
             {
                 var ProdList = new ObservableCollection<Product>(ctx.Products);
+
+                PRemoveComboBox.ItemsSource = ProdList;
             }
         }
     }

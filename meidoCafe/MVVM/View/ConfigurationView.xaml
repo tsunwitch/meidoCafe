@@ -26,7 +26,8 @@
                 <TextBlock Grid.Column="0" 
                            Grid.Row="1" 
                            Margin="0 0 0 10"
-                           Opacity="0.6"
+                           Opacity="1"
+                           Foreground="{StaticResource SecondaryHueMidBrush}"
                            Style="{StaticResource MaterialDesignHeadline5TextBlock}">
                     Add Product
                 </TextBlock>
@@ -78,6 +79,7 @@
                 </TextBox>
 
                 <Button Content="Submit"
+                        Name="ProductInsert"
                         Width="150"
                         Background="#eeeeee"
                         BorderThickness="0"
@@ -89,7 +91,8 @@
                 <TextBlock Grid.Column="0" 
                            Grid.Row="1" 
                            Margin="0 0 0 10"
-                           Opacity="0.6"
+                           Opacity="1"
+                           Foreground="{StaticResource SecondaryHueMidBrush}"
                            Style="{StaticResource MaterialDesignHeadline5TextBlock}">
                     Remove Product
                 </TextBlock>
@@ -97,8 +100,7 @@
                 <ComboBox materialDesign:HintAssist.Hint="Choose a product"
                           Name="PRemoveComboBox"
                           Width="150"
-                          Margin="8"
-                          ItemsSource="{Binding ProdList}">
+                          Margin="8">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
@@ -106,6 +108,13 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
+                <Button Content="Remove"
+                        Name="ProductDelete"
+                        Width="150"
+                        Background="#eeeeee"
+                        BorderThickness="0"
+                        Margin="0 15 0 0"/>
+                
             </StackPanel>
 
         </Grid>

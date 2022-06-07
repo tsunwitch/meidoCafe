@@ -74,7 +74,20 @@ namespace meidoCafe.MVVM.View
 
         private void ProductDelete_Click(object sender, RoutedEventArgs e)
         {
+            var productToDelete = new Product()
+            {
+                ProductId = PRemoveComboBox.SelectedIndex + 1
+            };
 
+            using (var ctx = new MeidoContext())
+            {
+                ctx.Products.Remove(productToDelete);
+
+                ctx.SaveChanges();
+            }
+
+            //Clearing input after delete
+            PRemoveComboBox.SelectedIndex = -1;
         }
     }
 }

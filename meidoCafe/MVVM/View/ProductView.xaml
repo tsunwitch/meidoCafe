@@ -9,7 +9,51 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Disabled">
         <StackPanel>
-            <Label>There's gonna be a table</Label>
+            <TextBlock Text="Products"
+                   Style="{StaticResource MaterialDesignHeadline3TextBlock}"
+                   Margin="5"
+                   Foreground="#bfbfbf"/>
+
+            <ItemsControl Name="icFoodItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="150"
+                                    Height="150"
+                                    Background="#bfbfbf"
+                                    CornerRadius="10"
+                                    Margin="15 0 0 15">
+                            <DockPanel>
+                                <StackPanel DockPanel.Dock="Top">
+                                    <TextBlock Text="{Binding Name}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="24"
+                                                    Margin="20 10 10 0"
+                                                    TextWrapping="Wrap"/>
+
+                                    <TextBlock Text="{Binding Price, StringFormat='${0}'}"
+                                                    Foreground="#ffffff"
+                                                    FontSize="16"
+                                                    Opacity="0.7"
+                                                    Margin="20 10 10 0"/>
+                                </StackPanel>
+
+                                <Button HorizontalAlignment="Right"
+                                            DockPanel.Dock="Bottom"
+                                            Content="+"
+                                            Background="#ffffff"
+                                            BorderThickness="0"
+                                            Name="panelButton"/>
+                            </DockPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

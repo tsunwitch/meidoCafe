@@ -29,6 +29,8 @@ namespace meidoCafe.MVVM.View
             using (var ctx = new MeidoContext())
             {
                 var productList = new ObservableCollection<Product>(ctx.Products.Where(p => p.CategoryId.Equals(4)));
+
+                icFoodItemsControl.ItemsSource = productList;
             }
         }
     }

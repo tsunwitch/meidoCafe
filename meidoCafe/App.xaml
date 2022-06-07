@@ -30,6 +30,10 @@
                 <view:ProductView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:ConfigurationViewModel}">
+                <view:ConfigurationView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

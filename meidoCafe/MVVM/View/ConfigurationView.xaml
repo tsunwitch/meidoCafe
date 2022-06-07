@@ -36,10 +36,11 @@
                           Name="PCategoryComboBox"
                           Width="150"
                           Margin="8">
-                    <ComboBoxItem Content="Food" />
-                    <ComboBoxItem Content="Drink" />
-                    <ComboBoxItem Content="Dessert" />
-                    <ComboBoxItem Content="Product" />
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
                 </ComboBox>
 
                 <TextBox x:Name="PNameTextBox"
@@ -78,8 +79,9 @@
 
                 </TextBox>
 
-                <Button Content="Submit"
+                <Button Content="Add"
                         Name="ProductInsert"
+                        Click="ProductInsert_Click"
                         Width="150"
                         Background="#eeeeee"
                         BorderThickness="0"
@@ -110,6 +112,7 @@
 
                 <Button Content="Remove"
                         Name="ProductDelete"
+                        Click="ProductDelete_Click"
                         Width="150"
                         Background="#eeeeee"
                         BorderThickness="0"

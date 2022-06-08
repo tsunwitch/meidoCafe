@@ -38,7 +38,8 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Height="70"
-                   MouseDown="Image_MouseDown"/>
+                   MouseDown="Image_MouseDown"
+                   RenderOptions.BitmapScalingMode ="HighQuality"/>
 
             <StackPanel Grid.Row="1">
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"

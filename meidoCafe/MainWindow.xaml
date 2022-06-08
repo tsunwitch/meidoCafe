@@ -37,7 +37,8 @@
             <Image Source="Images/meidoCafe.png"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
-                   Height="70"/>
+                   Height="70"
+                   MouseDown="Image_MouseDown"/>
 
             <StackPanel Grid.Row="1">
                 <RadioButton Style="{StaticResource MaterialDesignTabRadioButtonLeft}"
@@ -91,18 +92,10 @@
                 x
                 
             </Button>
-         
+
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Content="{Binding CurrentView}"/>
-
-            <Border Grid.Row="0" 
-                    Grid.ColumnSpan="2"
-                    Visibility="Visible"
-                    Height="15"
-                    VerticalAlignment="Top"
-                    Name="dragBorder"
-                    MouseDown="dragBorder_MouseDown"/>
         </Grid>
     </Border>
 </Window>

@@ -30,7 +30,7 @@ namespace meidoCafe
             Close();
         }
 
-        private void dragBorder_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
